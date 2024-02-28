@@ -41,7 +41,9 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build --full-stacktrace
+        run: |
+          ./gradlew setup
+          ./gradlew iris
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3.1.3
